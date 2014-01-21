@@ -36,7 +36,7 @@ class FactoryMuff
     /**
      * Creates and saves in db an instance
      * of Model with mock attributes
-     * 
+     *
      * @param string $model Model class name.
      * @param array  $attr  Model attributes.
      *
@@ -53,7 +53,7 @@ class FactoryMuff
 
             $message = '';
 
-            if(isset($obj->validationErrors)) 
+            if(isset($obj->validationErrors))
             {
                 if($obj->validationErrors)
                 {
@@ -70,7 +70,7 @@ class FactoryMuff
     /**
      * Return an instance of the model, which is
      * not saved in the database
-     * 
+     *
      * @param string $model Model class name.
      * @param array  $attr  Model attributes.
      *
@@ -96,7 +96,7 @@ class FactoryMuff
     /**
      * Returns an array of mock attributes
      * for the especified model
-     * 
+     *
      * @param string $model Model class name.
      * @param array  $attr  Model attributes.
      *
@@ -122,7 +122,7 @@ class FactoryMuff
         // Prepare attributes
         foreach ( $static_vars['factory'] as $key => $kind ) {
             if ( ! isset($attr[$key]) ){
-                $attr[$key] = $this->generateAttr( $kind, $model );    
+                $attr[$key] = $this->generateAttr( $kind, $model );
             }
         }
 
@@ -131,7 +131,7 @@ class FactoryMuff
 
     /**
      * Generate an attribute based in the wordlist
-     * 
+     *
      * @param string $kind The kind of attribute that will be generate.
      * @param string $model The name of the model class
      *
@@ -224,6 +224,10 @@ class FactoryMuff
              * ITS HERE: The point where you can extend
              * this class, to support new datatypes
              */
+
+        case 'boolean':
+            $result = rand(0,1) == 1;
+            break;
 
         // Returns the original string or number
         default:

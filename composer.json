@@ -1,5 +1,5 @@
 {
-    "name": "zizaco/factory-muff",
+    "name": "dheavy/factory-muff",
     "description": "The goal of this Package is to enable the rapid creation of objects for the purpose of testing.",
     "keywords": ["testing","factory","laravel"],
     "license": "MIT",
